@@ -1,8 +1,14 @@
-type FetchParams = {
+type FetcherParams = {
   query: string;
 };
 
-const fetchApi = async ({ query }: FetchParams) => {
+type FetcherResult<T> = {
+  data: T;
+};
+
+const fetchApi = async <T>({
+  query,
+}: FetcherParams): Promise<FetcherResult<T>> => {
   const url = process.env.NEXT_SHOPIFY_STOREFRONT_API;
 
   const res = await fetch(url, {
