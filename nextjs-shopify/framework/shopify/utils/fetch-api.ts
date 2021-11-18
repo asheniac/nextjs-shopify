@@ -3,7 +3,7 @@ type FetchParams = {
 };
 
 const fetchApi = async ({ query }: FetchParams) => {
-  const url = "http://localhost:4000/graphql";
+  const url = process.env.NEXT_SHOPIFY_STOREFRONT_API;
 
   const res = await fetch(url, {
     method: "POST", //use POST method for Graphql end point. It's a safe bet to use any GraphQL endpoint
@@ -20,6 +20,7 @@ const fetchApi = async ({ query }: FetchParams) => {
   if (errors) {
     throw new Error(errors[0].message ?? errors.message);
     //if errors[0].message is null / undefine they will run error.message
+    //The operator ?? is checking first left hand expression is null or undefined - >  if it is. return right hand expression
   }
 
   return { data }; //access as Object. if you want you can  return data.  // return data
