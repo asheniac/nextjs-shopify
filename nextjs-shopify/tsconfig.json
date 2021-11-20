@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./", //setup a baseURL
+    "baseUrl": "./",
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -16,10 +16,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@common": ["framework/common"], //need to setup base URL
+      "@common": ["framework/common"],
       "@common/*": ["framework/common/*"],
       "@framework": ["framework/shopify"],
-      "@framework/*": ["framework/*"]
+      "@framework/*": ["framework/shopify/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

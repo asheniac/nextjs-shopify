@@ -1,16 +1,9 @@
-type FetcherParams = {
-  query: string;
-};
-
-type FetcherResult<T> = {
-  data: T;
-};
+import { ApiFetcherOptions, ApiFetcherResults } from "@common/types/api";
 
 const fetchApi = async <T>({
+  url,
   query,
-}: FetcherParams): Promise<FetcherResult<T>> => {
-  const url = process.env.NEXT_SHOPIFY_STOREFRONT_API;
-
+}: ApiFetcherOptions): Promise<ApiFetcherResults<T>> => {
   const res = await fetch(url, {
     method: "POST", //use POST method for Graphql end point. It's a safe bet to use any GraphQL endpoint
     headers: {
