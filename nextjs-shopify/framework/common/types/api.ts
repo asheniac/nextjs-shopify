@@ -9,5 +9,5 @@ export type ApiFetcherResults<T> = {
 
 export interface ApiConfig {
   apiUrl: string;
-  fetch<T>(options: ApiFetcherOptions): Promise<ApiFetcherResult<T>>;
+  fetch<T>(options: ApiFetcherOptions): Promise<ApiFetcherResults<T>>;
 }

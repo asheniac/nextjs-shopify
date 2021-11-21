@@ -7,7 +7,7 @@ const ALLOWED_FRAMEWORK = ["shopify", "bigcommerce", "shopify_local"];
 const FALLBACK_FRAMEWORK = "shopify";
 
 function withFrameworkConfig(defaultConfig = {}) {
-  const framework = defaultConfig?.framework?.name;
+  let framework = defaultConfig?.framework?.name;
 
   if (!framework) {
     throw new Error("The api framework is missing. Please add framework name");
